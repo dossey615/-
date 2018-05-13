@@ -1,0 +1,59 @@
+<html>
+    <head>
+            <meta charset="utf-8">
+            <title>トーナメントアプリ</title>
+            <meta name="author" content="dossey">
+            <meta name="description" content="ゲームのトーナメント表管理アプリケーション">
+            <meta name="ゲーム,トーナメント">
+            <script type="text/javascript" src="js_file/jquery-3.3.1.min.js"></script>
+            <script type="text/javascript" src="js_file/script.js"></script>
+    </head>
+
+    <body>
+        <h1>GAME-MANAGER 〜ゲームトーナメント管理アプリ〜</h1>
+
+        <!-- トーナメントの設定フォーム -->
+            <h2>トーナメント制作</h2>
+                <h3>トーナメント詳細</h3>
+                    <form action="#" name="main">
+                        <p>形式：
+                        <select name="type">
+                            <option value="double">ダブルイリミネーション</option>
+                            <option value="single">シングルイリミネーション</option>
+                        </select>
+                        </p>
+                        <p>対戦方法：
+                                <input type="radio" name="much" value="single_b">シングルマッチ
+                                <input type="radio" name="much" value="team_b">タッグマッチ
+                            </p>
+                        <p>稼働台数：
+                            <input type="number" name="bunb" min="1" max="20"> 
+                        </p>
+
+        <!-- トーナメントの出場者設定フォーム --> 
+                        <h3>参加者登録</h3>
+                        <p>リングネーム：
+                            <input type="text" name="name" placeholder="例）最強な俺" value = "">
+                        </p>
+                        <p>運営者：
+                            <input type="checkbox" name="check" value="manager">
+                        </p>
+                        <p>
+                            <input type="button" value="追加" onclick="insertRow('table')">
+                            <input type="reset" name="reset" value="全参加者の取り消し">
+                        </p>
+                    </form>
+        <table border="1" id="s">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>リングネーム</th>
+                    <th>運営者</th>
+                    <th>削除</th>
+                </tr>
+            </thead>
+            <tbody id="table">
+            </tbody>
+        </table>
+    </body>
+</html>
